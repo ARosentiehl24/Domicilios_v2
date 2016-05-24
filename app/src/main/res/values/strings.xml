@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Domicilios</string>
+    <string name="app_name_lowercase">domicilios</string>
+    <string name="app_version">Ver. 1.0.0</string>
+    <string name="com">.com</string>
+    <string name="title_activity_main">Restaurantes</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="restaurantes">Restaurantes</string>
+    <string name="mapa">Mapa</string>
+    <string name="title_activity_restaurante">Restaurante</string>
+    <string name="metodos_de_pago">Métodos de pago</string>
+    <string name="pedido_minimo">Pedido Minímo</string>
+    <string name="costo_envio">Costo Envio</string>
+    <string name="tiempo_de_entrega">Tiempo de Entrega</string>
+    <string name="ver_orden">Ver Orden</string>
+    <string name="number_0">0</string>
+    <string name="add">+</string>
+    <string name="quit">-</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tu_orden">Tu Orden</string>
+    <string name="confirmar_pedido">Confirmar Pedido</string>
+    <string name="total">Total:</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="pedido_confirmado">¡Pedido Confirmado!</string>
+    <string name="mensaje_tiempo_entrega">Tu pedido llegará entre </string>
+    <string name="buscar_restaurante">Buscar</string>
+    <string name="promociones">Promo</string>
+</resources>

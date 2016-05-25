@@ -148,7 +148,7 @@ public class RestauranteActivity extends AppCompatActivity {
 
             ArrayList<Plato> platos = restaurante.getMenu();
 
-            platoAdapter = new PlatoAdapter(getActivity(), platos);
+            platoAdapter = new PlatoAdapter(getActivity(), platos, false);
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setHasFixedSize(true);
             recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), null, false, true));

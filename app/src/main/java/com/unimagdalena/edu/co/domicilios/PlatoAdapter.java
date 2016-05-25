@@ -21,11 +21,13 @@ public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.ViewHolder> 
 
     private Activity activity;
     private ArrayList<Plato> platos;
+    private Boolean esconderBotones;
     private RestauranteActivity.PlatoFragment platoFragment;
 
-    public PlatoAdapter(Activity activity, ArrayList<Plato> platos) {
+    public PlatoAdapter(Activity activity, ArrayList<Plato> platos, Boolean esconderBotones) {
         this.activity = activity;
         this.platos = platos;
+        this.esconderBotones = esconderBotones;
         this.platoFragment = RestauranteActivity.PlatoFragment.getInstance();
     }
 
@@ -47,6 +49,9 @@ public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.ViewHolder> 
         holder.nombrePlato.setText(plato.getNombre());
         holder.descripcionPlato.setText(plato.getDescripcion());
         holder.precioPlato.setText(NumberFormat.getCurrencyInstance(new Locale("es", "CO")).format(plato.getPrecio()));
+
+        holder.botonAgregar.setVisibility(esconderBotones ? View.INVISIBLE : View.VISIBLE);
+        holder.botonQuitar.setVisibility(esconderBotones ? View.INVISIBLE : View.VISIBLE);
 
         holder.botonAgregar.setOnClickListener(new View.OnClickListener() {
             @Override

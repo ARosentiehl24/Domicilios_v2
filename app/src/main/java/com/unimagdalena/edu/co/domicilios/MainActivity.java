@@ -82,6 +82,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.botonPromociones:
+                ArrayList<Plato> platos = new ArrayList<>();
+
+                for (Restaurante restaurante : restaurantes) {
+                    
+                }
+
+                PlatoAdapter platoAdapter = new PlatoAdapter(this, platos, true);
+                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                recyclerView.setHasFixedSize(true);
+                recyclerView.setAdapter(platoAdapter);
 
                 break;
             case R.id.mapa:

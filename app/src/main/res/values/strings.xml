@@ -29,4 +29,5 @@
     <string name="mensaje_tiempo_entrega">Tu pedido llegará entre </string>
     <string name="buscar_restaurante">Buscar</string>
     <string name="promociones">Promo</string>
+    <string name="remover">Remover</string>
 </resources>

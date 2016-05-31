@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_car_shop"
     android:orientation="vertical"
-    tools:context="com.unimagdalena.edu.co.domicilios.ConfirmarPedidoActivity">
+    tools:context=".vista.ConfirmarPedidoActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:contentDescription="@null"
-            android:src="@drawable/ic_alarm_192dp" />
+            android:src="@drawable/alarm" />
 
         <TextView
             android:layout_width="wrap_content"

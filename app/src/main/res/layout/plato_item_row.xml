@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:clickable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,9 +22,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
                 android:textColor="@color/background_dark"
-                android:textSize="15sp"
-                android:textStyle="italic"
-                android:typeface="sans" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/descripcion_plato"
@@ -32,9 +31,7 @@
                 android:layout_below="@id/nombre_plato"
                 android:text="@string/app_name"
                 android:textColor="@color/secondary_text_light"
-                android:textSize="12.5sp"
-                android:textStyle="italic"
-                android:typeface="sans" />
+                android:textSize="12.5sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -49,35 +46,17 @@
                 android:layout_alignParentEnd="true"
                 android:text="@string/app_name"
                 android:textColor="@color/background_dark"
-                android:textSize="18sp"
-                android:textStyle="italic"
-                android:typeface="sans" />
+                android:textSize="18sp" />
 
-            <com.rafakob.drawme.DrawMeButton
-                android:layout_margin="2.5dp"
-                android:id="@+id/botonAgregar"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+            <Button
+                android:id="@+id/botonQuitar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@id/precio_plato"
-                android:text="@string/add"
-                android:textColor="@color/background_light"
-                app:dm_backColor="@color/background_car_shop"
-                app:dm_radius="5dp"
-                app:dm_rippleEffect="true" />
-
-            <com.rafakob.drawme.DrawMeButton
-                android:layout_margin="2.5dp"
-                android:id="@+id/botonQuitar"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_below="@id/precio_plato"
-                android:layout_toStartOf="@id/botonAgregar"
-                android:text="@string/quit"
-                android:textColor="@color/background_light"
-                app:dm_backColor="@color/background_car_shop"
-                app:dm_radius="5dp"
-                app:dm_rippleEffect="true" />
+                android:text="@string/remover"
+                android:textColor="@color/background_dark"
+                android:textSize="12.5sp" />
         </RelativeLayout>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

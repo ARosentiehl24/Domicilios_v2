@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestauranteActivity$PlatoFragment">
+    tools:context=".vista.RestauranteActivity$PlatoFragment">
 
     <RelativeLayout
         android:id="@+id/info_restaurante"
@@ -176,12 +176,11 @@
             android:background="@color/background_car_shop"
             android:gravity="center_vertical">
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@null"
-                android:drawableStart="@drawable/ic_local_grocery_store_white_48dp"
+                android:textSize="20sp"
                 android:text="@string/ver_orden"
                 android:textColor="@color/background_light" />
 
@@ -199,7 +198,7 @@
                 android:textColor="@color/background_light"
                 android:textSize="20sp" />
 
-            <com.rafakob.drawme.DrawMeTextView
+            <TextView
                 android:id="@+id/total_items"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
@@ -207,9 +206,7 @@
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:text="@string/number_0"
-                android:textColor="@color/background_car_shop"
-                drawme:dm_backColor="@color/background_light"
-                drawme:dm_radius="100dp" />
+                android:textColor="@color/background_light" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

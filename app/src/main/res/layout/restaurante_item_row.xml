@@ -1,79 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp"
-    android:clickable="true"
-    android:foreground="?selectableItemBackground"
-    app:cardCornerRadius="0dp"
-    app:cardElevation="2.5dp">
+    android:background="?selectableItemBackground"
+    android:clickable="true">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/logo_restaurante"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@null"
+        android:src="@mipmap/ic_launcher" />
 
-        <ImageView
-            android:id="@+id/logo_restaurante"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_margin="10dp"
-            android:contentDescription="@null"
-            android:src="@mipmap/ic_launcher" />
+    <TextView
+        android:id="@+id/nombre_restaurante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/logo_restaurante"
+        android:layout_toEndOf="@id/logo_restaurante"
+        android:text="@string/app_name"
+        android:textColor="@color/background_dark"
+        android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/nombre_restaurante"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/logo_restaurante"
-            android:layout_toEndOf="@id/logo_restaurante"
-            android:text="@string/app_name"
-            android:textColor="@color/background_dark"
-            android:textSize="15sp"
-            android:textStyle="italic"
-            android:typeface="sans" />
+    <RatingBar
+        android:id="@+id/rating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombre_restaurante"
+        android:layout_toEndOf="@id/logo_restaurante"
+        android:isIndicator="true"
+        android:max="5" />
 
-        <RatingBar
-            android:id="@+id/rating"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/nombre_restaurante"
-            android:layout_toEndOf="@id/logo_restaurante"
-            android:isIndicator="true"
-            android:max="5" />
+    <TextView
+        android:id="@+id/pedido_minimo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/logo_restaurante"
+        android:layout_toEndOf="@id/logo_restaurante"
+        android:text="@string/app_name"
+        android:textColor="@color/secondary_text_light"
+        android:textSize="12.5sp" />
 
-        <TextView
-            android:id="@+id/pedido_minimo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/logo_restaurante"
-            android:layout_toEndOf="@id/logo_restaurante"
-            android:text="@string/app_name"
-            android:textColor="@color/secondary_text_light"
-            android:textSize="12.5sp"
-            android:typeface="sans" />
+    <TextView
+        android:id="@+id/categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/pedido_minimo"
+        android:layout_toEndOf="@id/logo_restaurante"
+        android:text="@string/app_name"
+        android:textSize="12.5sp" />
 
-        <TextView
-            android:id="@+id/categoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/pedido_minimo"
-            android:layout_toEndOf="@id/logo_restaurante"
-            android:text="@string/app_name"
-            android:textSize="12.5sp"
-            android:textStyle="italic"
-            android:typeface="sans" />
-
-        <TextView
-            android:id="@+id/estado_restaurante"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="15dp"
-            android:text="@string/app_name"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-</android.support.v7.widget.CardView>
+    <TextView
+        android:id="@+id/estado_restaurante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:text="@string/app_name"
+        android:textSize="15sp" />
+</RelativeLayout>

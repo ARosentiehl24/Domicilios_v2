@@ -6,24 +6,6 @@
         <item name="colorPrimary">@color/domiclios</item>
         <item name="colorPrimaryDark">@color/domiclios</item>
         <item name="colorAccent">@color/domiclios</item>
-        <item name="android:navigationBarColor">@color/domiclios</item>
-    </style>
-
-    <style name="SplashScreenAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/domiclios</item>
-        <item name="colorPrimaryDark">@color/domiclios</item>
-        <item name="colorAccent">@color/background_light</item>
-        <item name="android:navigationBarColor">@color/domiclios</item>
-        <item name="android:windowBackground">@color/domiclios</item>
-    </style>
-
-    <style name="OrdenAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/background_car_shop</item>
-        <item name="colorPrimaryDark">@color/background_car_shop</item>
-        <item name="colorAccent">@color/background_car_shop</item>
-        <item name="android:navigationBarColor">@color/background_car_shop</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 

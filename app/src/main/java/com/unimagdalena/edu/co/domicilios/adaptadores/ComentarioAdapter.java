@@ -1,6 +1,5 @@
 package com.unimagdalena.edu.co.domicilios.adaptadores;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,21 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.unimagdalena.edu.co.domicilios.modelo.Comentario;
 import com.unimagdalena.edu.co.domicilios.R;
+import com.unimagdalena.edu.co.domicilios.modelo.Comentario;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 public class ComentarioAdapter extends RecyclerView.Adapter<ComentarioAdapter.ViewHolder> {
 
-    private Activity activity;
     private ArrayList<Comentario> comentarios;
 
-    public ComentarioAdapter(Activity activity, ArrayList<Comentario> comentarios) {
-        this.activity = activity;
+    public ComentarioAdapter(ArrayList<Comentario> comentarios) {
         this.comentarios = comentarios;
     }
 
@@ -39,7 +33,7 @@ public class ComentarioAdapter extends RecyclerView.Adapter<ComentarioAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, int position) {
         Comentario comentario = comentarios.get(position);
 
-        holder.nombreUsuario.setText(comentario.getUsuario());
+        holder.nombre_usuario.setText(comentario.getUsuario());
         holder.comentario.setText(comentario.getComentario());
     }
 
@@ -50,15 +44,14 @@ public class ComentarioAdapter extends RecyclerView.Adapter<ComentarioAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.nombre_usuario)
-        TextView nombreUsuario;
-
-        @Bind(R.id.comentario)
-        TextView comentario;
+        public TextView nombre_usuario;
+        public TextView comentario;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
+
+            this.nombre_usuario = (TextView) itemView.findViewById(R.id.nombre_usuario);
+            this.comentario = (TextView) itemView.findViewById(R.id.comentario);
         }
     }
 }

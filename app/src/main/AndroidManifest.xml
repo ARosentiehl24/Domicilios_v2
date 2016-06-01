@@ -15,8 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".vista.IntroActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@style/SplashScreenAppTheme">
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,12 +34,10 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".vista.OrdenActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@style/OrdenAppTheme" />
+            android:configChanges="orientation|screenSize" />
         <activity
             android:name=".vista.ConfirmarPedidoActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@style/OrdenAppTheme" />
+            android:configChanges="orientation|screenSize" />
         <activity
             android:name=".vista.MainActivity"
             android:configChanges="orientation|screenSize"

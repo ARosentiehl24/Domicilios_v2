@@ -15,14 +15,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.unimagdalena.edu.co.domicilios.R;
+import com.unimagdalena.edu.co.domicilios.logica.Util;
 import com.unimagdalena.edu.co.domicilios.modelo.Restaurante;
 import com.unimagdalena.edu.co.domicilios.vista.RestauranteActivity;
-import com.unimagdalena.edu.co.domicilios.logica.Util;
 
 import java.util.ArrayList;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.ViewHolder> {
 
@@ -37,9 +34,7 @@ public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-
         View restaurantes = layoutInflater.inflate(R.layout.restaurante_item_row, parent, false);
 
         return new ViewHolder(restaurantes);
@@ -49,17 +44,17 @@ public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.
     public void onBindViewHolder(ViewHolder holder, int position) {
         Restaurante restaurante = restaurantes.get(position);
 
-        Picasso.with(activity).load(restaurante.getImagen()).into(holder.logoRestaurante);
-        holder.nombreRestaurante.setText(restaurante.getNombre());
+        Picasso.with(activity).load(restaurante.getImagen()).into(holder.logo_restaurante);
+        holder.nombre_restaurante.setText(restaurante.getNombre());
         holder.rating.setRating(restaurante.getCalificacion());
         holder.categoria.setText(restaurante.getCategoria());
-        holder.pedidoMinimo.setText(Util.formatoPeso(restaurante.getPrecioMinimo()));
+        holder.pedido_minimo.setText(Util.formatoPeso(restaurante.getPrecioMinimo()));
 
         if (restaurante.getEstado()) {
-            holder.estadoRestaurante.setText("Abierto");
-            holder.estadoRestaurante.setTextColor(ContextCompat.getColor(activity, R.color.green_500));
+            holder.estado_restaurante.setText("Abierto");
+            holder.estado_restaurante.setTextColor(ContextCompat.getColor(activity, R.color.green_500));
         } else {
-            holder.estadoRestaurante.setText("Cerrado");
+            holder.estado_restaurante.setText("Cerrado");
         }
     }
 
@@ -68,46 +63,32 @@ public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.
         return restaurantes.size();
     }
 
-    public Restaurante getRestaurante(int position) {
-        return restaurantes.get(position);
-    }
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
-        @Bind(R.id.logo_restaurante)
-        ImageView logoRestaurante;
-
-        @Bind(R.id.nombre_restaurante)
-        TextView nombreRestaurante;
-
-        @Bind(R.id.rating)
-        RatingBar rating;
-
-        @Bind(R.id.categoria)
-        TextView categoria;
-
-        @Bind(R.id.pedido_minimo)
-        TextView pedidoMinimo;
-
-        @Bind(R.id.estado_restaurante)
-        TextView estadoRestaurante;
+        public ImageView logo_restaurante;
+        public TextView nombre_restaurante;
+        public RatingBar rating;
+        public TextView pedido_minimo;
+        public TextView categoria;
+        public TextView estado_restaurante;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
 
-            itemView.setOnClickListener(this);
+            this.logo_restaurante = (ImageView) itemView.findViewById(R.id.logo_restaurante);
+            this.nombre_restaurante = (TextView) itemView.findViewById(R.id.nombre_restaurante);
+            this.rating = (RatingBar) itemView.findViewById(R.id.rating);
+            this.pedido_minimo = (TextView) itemView.findViewById(R.id.pedido_minimo);
+            this.categoria = (TextView) itemView.findViewById(R.id.categoria);
+            this.estado_restaurante = (TextView) itemView.findViewById(R.id.estado_restaurante);
         }
 
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(activity, RestauranteActivity.class);
-
             Bundle bundle = new Bundle();
             bundle.putSerializable("restaurante", restaurantes.get(getLayoutPosition()));
-
             intent.putExtras(bundle);
-
             activity.startActivity(intent);
         }
     }

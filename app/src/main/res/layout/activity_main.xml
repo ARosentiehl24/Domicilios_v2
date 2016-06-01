@@ -8,12 +8,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:layout_height="?actionBarSize"
+        android:layout_gravity="center"
+        android:background="@color/domiclios"
+        android:gravity="center"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        android:paddingRight="@dimen/activity_horizontal_margin">
 
         <EditText
             android:id="@+id/searchView"
@@ -21,21 +21,24 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/background_light"
             android:drawableStart="@drawable/search"
             android:hint="@string/buscar_restaurante"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/background_light"
+            android:textColorHint="@color/background_light" />
 
         <Button
             android:id="@+id/botonPromociones"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/promociones"
             android:textColor="@color/background_dark" />
 
         <Button
             android:id="@+id/mapa"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/mapa"
             android:textColor="@color/background_dark" />
     </LinearLayout>

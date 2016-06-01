@@ -21,23 +21,20 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-import com.unimagdalena.edu.co.domicilios.modelo.Comentario;
-import com.unimagdalena.edu.co.domicilios.modelo.Compra;
-import com.unimagdalena.edu.co.domicilios.logica.DividerItemDecoration;
-import com.unimagdalena.edu.co.domicilios.modelo.Plato;
 import com.unimagdalena.edu.co.domicilios.R;
-import com.unimagdalena.edu.co.domicilios.modelo.Restaurante;
-import com.unimagdalena.edu.co.domicilios.modelo.TipoPago;
-import com.unimagdalena.edu.co.domicilios.logica.Util;
 import com.unimagdalena.edu.co.domicilios.adaptadores.ComentarioAdapter;
 import com.unimagdalena.edu.co.domicilios.adaptadores.PlatoAdapter;
+import com.unimagdalena.edu.co.domicilios.logica.DividerItemDecoration;
+import com.unimagdalena.edu.co.domicilios.logica.Util;
+import com.unimagdalena.edu.co.domicilios.modelo.Comentario;
+import com.unimagdalena.edu.co.domicilios.modelo.Compra;
+import com.unimagdalena.edu.co.domicilios.modelo.Plato;
+import com.unimagdalena.edu.co.domicilios.modelo.Restaurante;
+import com.unimagdalena.edu.co.domicilios.modelo.TipoPago;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class RestauranteActivity extends AppCompatActivity {
 
@@ -66,9 +63,7 @@ public class RestauranteActivity extends AppCompatActivity {
 
     public static class PlatoFragment extends Fragment {
 
-        @Bind(R.id.recyclerView)
-        RecyclerView recyclerView;
-
+        private RecyclerView recyclerView;
         private ArrayList<Plato> platosPedidos = new ArrayList<>();
         private Double precioOrden;
         private TextView totalItems;
@@ -96,7 +91,6 @@ public class RestauranteActivity extends AppCompatActivity {
         @Override
         public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            ButterKnife.bind(this, view);
 
             TextView nombreRestaurante = (TextView) view.findViewById(R.id.nombre_restaurante);
             nombreRestaurante.setText(restaurante.getNombre());
@@ -207,9 +201,7 @@ public class RestauranteActivity extends AppCompatActivity {
 
     public static class ComentarioFragment extends Fragment {
 
-        @Bind(R.id.recyclerView)
-        RecyclerView recyclerView;
-
+        private RecyclerView recyclerView;
         private ComentarioAdapter comentarioAdapter;
 
         public ComentarioFragment() {
@@ -227,11 +219,10 @@ public class RestauranteActivity extends AppCompatActivity {
         @Override
         public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            ButterKnife.bind(this, view);
 
             ArrayList<Comentario> comentarios = restaurante.getComentarios();
 
-            comentarioAdapter = new ComentarioAdapter(getActivity(), comentarios);
+            comentarioAdapter = new ComentarioAdapter(comentarios);
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setHasFixedSize(true);
             recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), null, false, true));

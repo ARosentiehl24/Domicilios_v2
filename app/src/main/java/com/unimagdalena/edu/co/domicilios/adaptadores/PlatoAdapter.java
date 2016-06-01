@@ -11,17 +11,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.unimagdalena.edu.co.domicilios.modelo.Plato;
 import com.unimagdalena.edu.co.domicilios.R;
+import com.unimagdalena.edu.co.domicilios.modelo.Plato;
 import com.unimagdalena.edu.co.domicilios.modelo.Restaurante;
 import com.unimagdalena.edu.co.domicilios.vista.RestauranteActivity;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.ViewHolder> {
 
@@ -59,9 +56,9 @@ public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Plato plato = platos.get(position);
 
-        holder.nombrePlato.setText(plato.getNombre());
-        holder.descripcionPlato.setText(plato.getDescripcion());
-        holder.precioPlato.setText(NumberFormat.getCurrencyInstance(new Locale("es", "CO")).format(plato.getPrecio()));
+        holder.nombre_plato.setText(plato.getNombre());
+        holder.descripcion_plato.setText(plato.getDescripcion());
+        holder.precio_plato.setText(NumberFormat.getCurrencyInstance(new Locale("es", "CO")).format(plato.getPrecio()));
 
         holder.botonQuitar.setVisibility(esconderBotones ? View.INVISIBLE : View.VISIBLE);
         holder.botonQuitar.setOnClickListener(new View.OnClickListener() {
@@ -80,23 +77,18 @@ public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        @Bind(R.id.nombre_plato)
-        TextView nombrePlato;
-
-        @Bind(R.id.descripcion_plato)
-        TextView descripcionPlato;
-
-        @Bind(R.id.precio_plato)
-        TextView precioPlato;
-
-        @Bind(R.id.botonQuitar)
-        Button botonQuitar;
+        public TextView nombre_plato;
+        public TextView descripcion_plato;
+        public TextView precio_plato;
+        public Button botonQuitar;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
 
-            itemView.setOnClickListener(this);
+            this.nombre_plato = (TextView) itemView.findViewById(R.id.nombre_plato);
+            this.descripcion_plato = (TextView) itemView.findViewById(R.id.descripcion_plato);
+            this.precio_plato = (TextView) itemView.findViewById(R.id.precio_plato);
+            this.botonQuitar = (Button) itemView.findViewById(R.id.botonQuitar);
         }
 
         @Override

@@ -23,8 +23,6 @@ import java.util.ArrayList;
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private EditText searchView;
-    private Button botonPromociones;
-    private Button mapa;
     private RecyclerView recyclerView;
     private ArrayList<Restaurante> restaurantes;
     private ArrayList<Plato> platos;
@@ -42,8 +40,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void initView() {
         searchView = (EditText) findViewById(R.id.searchView);
-        botonPromociones = (Button) findViewById(R.id.botonPromociones);
-        mapa = (Button) findViewById(R.id.mapa);
+        Button botonPromociones = (Button) findViewById(R.id.botonPromociones);
+        Button mapa = (Button) findViewById(R.id.mapa);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         botonPromociones.setOnClickListener(this);
